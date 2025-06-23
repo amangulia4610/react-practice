@@ -1,4 +1,3 @@
-import React, { use } from "react";
 import { useState } from "react";
 
 // Todo component
@@ -47,10 +46,10 @@ const todo = () => {
                 {/* Button to add todo */}
                 <button onClick={() => updateTodo()}>Add</button>
                 <br />
-                <ul>
+                <ul style={{ listStyleType: "none", padding: 0, marginTop: "20px" }}>
                     {/* Render list of todos */}
                     {todos.map((todo) => (
-                        <li key={todo.id}>
+                        <li key={todo.id} style={{ display: "flex", alignItems: "center", gap:"20px", marginBottom: "10px" }}>
                             {/* Todo text with line-through if completed */}
                             <span style={{ textDecoration: todo.completed ? "line-through" : "none" }}>
                                 {todo.text}
