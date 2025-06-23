@@ -18,16 +18,26 @@ const todo = () => {
     setInput("");
     console.log("Todo added:", newTodo);
   };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      updateTodo();
+    }
+  };
+
   return (
     <>
       <div className="todo-container">
         <h1>Todo List</h1>
         <input
           type="text"
+          style={{ width: "300px", padding: "10px", marginRight: "10px" }}
           value={input}
+          onKeyDown={handleKeyDown}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Add a new task"
         />
+    
         <button onClick={() => updateTodo()}>Add</button>
         <br />
         <ul>
